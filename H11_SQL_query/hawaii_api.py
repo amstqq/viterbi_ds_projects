@@ -59,14 +59,14 @@ def precipitation():
     # Calculate the date 1 year ago from today
     last_year = dt.datetime.now() - dt.timedelta(days=2*365)
     # Perform a query to retrieve the data and precipitation scores
-    results = session.query(Measurement.date,Measurement.tobs).filter(Measurement.date>last_year).all()
+    results = session.query(Measurement.date,Measurement.prcp).filter(Measurement.date>last_year).all()
 
     # Create a dictionary from the row data and append to a list
     last_year_prcp = []
     for result in results:
         prcp_dict = {}
         prcp_dict['date'] = result.date
-        prcp_dict['tobs'] = result.tobs
+        prcp_dict['prcp'] = result.prcp
         last_year_prcp.append(prcp_dict)
 
     return jsonify(last_year_prcp)
@@ -104,7 +104,7 @@ def temperature(start, end = None):
             temp_dict['TMIN'] = results[0][0]
             temp_dict['TAVG'] = results[0][1]
             temp_dict['TMAX'] = results[0][2]
-        
+
             return jsonify(temp_dict)
         elif end > start:
             results = session.query(func.min(Measurement.tobs), func.avg(Measurement.tobs), func.max(Measurement.tobs)).\
@@ -120,4 +120,3 @@ def temperature(start, end = None):
 
 if __name__ == '__main__':
     app.run(debug=True)
-
