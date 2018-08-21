@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Humidity vs. Latitude</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  /* Remove the navbar's default margin-bottom and rounded borders */
+  .navbar {
+    font-size:130%;
+    margin-bottom: 0;
+    border-radius: 0;
+  }
+
+  .well {
+    margin: 20px;
+    padding: 40px;
+    border:8px solid #784A58;
+  }
+
+  h1 {
+    font-family:fantasy;
+  }
+
+  /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+  .row.content {height: 450px}
+
+  /* Set gray background color and 100% height */
+  .sidenav {
+    padding-top: 20px;
+    background-color: #f1f1f1;
+    height: 100%;
+  }
+
+  /* Set black background color, white text and some padding */
+  footer {
+    background-color: #555;
+    color: white;
+    padding: 15px;
+  }
+
+  /* On mdall screens, set height to 'auto' for sidenav and grid */
+  @media screen and (max-width: 767px) {
+    .sidenav {
+      height: auto;
+      padding: 15px;
+    }
+    .row.content {height:auto;}
+  }
+  </style>
+</head>
+<body>
+
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" style="font-family:fantasy;font-size:180%" href="index.html">Latitude</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="index.html">Home</a></li>
+          <li class="dropdown active"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Plots <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="temp.html">Temperature vs. Latitude</a></li>
+              <li class="active"><a href="hum.html">Humidity vs. Latitude</a></li>
+              <li><a href="cloud.html">Cloudiness vs. Latitude</a></li>
+              <li><a href="wind.html">Wind Speed vs. Latitude</a></li>
+            </ul>
+          </li>
+          <li><a href="comp.html">Comparison</a></li>
+          <li><a href="data.html">Data</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <br><br><br>
+
+  <div class="container-fluid text-center">
+    <div class="row">
+      <div class="col-md-7">
+        <div class="well">
+          <h1>Humidity Vs. Latitude</h1>
+          <hr style="height:1px;border:none;color:#333;background-color:#333;">
+          <img class="img-fluid img-thumbnail" src="Resources/assets/images/Fig2.png"><br><br>
+          <p class="text-left">There is no strong relationship between latitude and wind speed. However, a clustering of humidity higher than 60% can be seen in the northern hemisphere between latitude 30 to 60 degrees.</p>
+        </div>
+      </div>
+      <div class="col-md-5">
+        <div class="well">
+          <div class="row">
+            <div class="col-md-12">
+              <h1>Visualizations</h1>
+              <hr style="height:1px;border:none;color:#333;background-color:#333;">
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a href="temp.html">
+                  <img class="rounded mx-auto d-block" src="Resources\assets\images\Fig1.png" alt="Visualizations" style="width:100%">
+                  <div class="caption">
+                    <p>Temperature <br> vs. <br> Latitude</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a href="hum.html">
+                  <img class="rounded mx-auto d-block" src="Resources\assets\images\Fig2.png" alt="Visualizations" style="width:100%;border:5px solid grey;">
+                  <div class="caption">
+                    <p>Humidity <br> vs. <br> Latitude</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a href="cloud.html">
+                  <img class="rounded mx-auto d-block" src="Resources\assets\images\Fig3.png" alt="Visualizations" style="width:100%">
+                  <div class="caption">
+                    <p>Cloudiness <br> vs. <br> Latitude</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="thumbnail">
+                <a href="wind.html">
+                  <img class="rounded mx-auto d-block" src="Resources\assets\images\Fig4.png" alt="Visualizations" style="width:100%">
+                  <div class="caption">
+                    <p>Wind Speed <br> vs. <br> Latitude</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <footer class="container-fluid text-center">
+    <br><br>
+  </footer>
+
+</body>
+</html>
