@@ -1,38 +1,240 @@
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+  <title>Mars Data Scraping Website</title>
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+  crossorigin="anonymous"></script>
+
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+  integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+  crossorigin="anonymous">
+
+  <style>
+  table, td, th {
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+
+  th, td {
+    padding: 15px;
+  }
+  </style>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+  crossorigin="anonymous"></script>
+
+  <!-- Popper JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+
+  <!-- Logos -->
+  <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="assets/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+  <link rel="manifest" href="assets/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="assets/logos/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- YOUR CUSTOM STYLESHEETS GO HERE -->
+  <link rel="stylesheet" href="../styles/styles.css">
+
 </head>
 
 <body>
+  <!-- Nav Bar START -->
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <!-- Brand START -->
+      <a class="navbar-brand" href="#">
+        <img src="https://www.logolynx.com/images/logolynx/a8/a88ad42f1b56f9fcbae683f4118d1b72.png"
+        width="30" height="30" class="d-inline-block align-top" alt="">
+        <span style="padding-left: 15px">Mission to Mars</span>
+      </a>
+      <!-- Brand END -->
+    </div>
+  </nav>
+  <!-- Nav Bar END -->
 
-    <div class="container">
-        <div class="jumbotron">
-            <h1>Mission to Mars</h1>
-            <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape new data!</a></p>
-
-        </div>
-
-            {% for result in results%}
-                    <div class="col-lg-4">
-                            <div class="card" style="width: 20rem;">
-                                <div class="card-body">
-                                  <h4 class="card-title">Latest Mars News</h4>
-                                  <p class="card-text"><b>result.news_title</b></p>
-                                  <p class="card-text">result.news_p</p>
-
-                                </div>
-                              </div>
-                          </div>
-            {% endfor %}
-
+  <!-- Jumbotron START -->
+  <div class="jumbotron jumbotron-fluid" style="background-image: url('https://media.istockphoto.com/vectors/martian-landscape-background-vector-id827511944?k=6&m=827511944&s=612x612&w=0&h=Zbhj44nl8ArDajMvfje91Rtsgv9_mAB0n0hqi-Ov0WQ=')">
+    <div class="container-fluid text-center">
+      <h1 class="display-3">Mission to Mars: A Data Scraping Project</h1>
+      <br>
     </div>
 
-</body>
+    <br>
 
+    <!-- Pagination START -->
+    <div class="row justify-content-center">
+      <nav class="nav nav-pills flex-column flex-sm-row">
+        <a class="flex-sm-fill text-sm-center nav-link active" href="/scrape">Scrape New Data</a>
+      </nav>
+    </div>
+    <!-- Pagination END -->
+  </div>
+  <!-- Jumbtron END -->
+
+  <br>
+
+  <!-- Main Content START -->
+  <div class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-8 cardposts">
+
+
+        <!-- Post 1 START -->
+        <div class="card">
+          <div class="card-header">
+            <h1>Table of Contents</h1>
+          </div>
+          <div class="card-body">
+            <!-- <h5>You may click on any item to navigate directly to it.</h5> -->
+            <ul class="list-group">
+              <!-- Item 1 -->
+              <li class="list-group-item"><a class="nav-link" href="#headingOne">Latest Mars News</a></li>
+              <!-- Item 2 -->
+              <li class="list-group-item"><a class="nav-link" href="#headingTwo">Featured Mars Image</a></li>
+              <!-- Item 3 -->
+              <li class="list-group-item"><a class="nav-link" href="#headingThree">Mars Facts</a></li>
+              <!-- Item 4 -->
+              <li class="list-group-item"><a class="nav-link" href="#headingFour">Mars Hemisphere</a></li>
+            </ul>
+
+            <br>
+
+          </div>
+        </div>
+        <!-- Post 1 END -->
+
+        <br><br>
+
+        <!-- Collapsable Posts START -->
+        <div class="accordion" id="environmentAccordion">
+
+          <!-- Introduction -->
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <div class="mb-0 text-center">
+                <button class="btn btn-link" type="button" disabled>
+                <h2 style="color:blue">Latest Mars News</h2>
+              </button>
+            </div>
+          </div>
+
+          <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#environmentAccordion">
+            <div class="card-body">
+              <br>
+              <h3>{{ result['news_title'] }}</h3>
+              <br>
+              <p>{{ result['news_p'] }}</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- File & Folder Structure Organization -->
+        <div class="card">
+          <div class="card-header" id="headingTwo">
+            <div class="mb-0 text-center">
+              <button class="btn btn-link" type="button" disabled>
+              <h2 style="color:blue">Featured Mars Image</h2>
+            </button>
+          </div>
+        </div>
+
+        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#environmentAccordion">
+          <div class="card-body">
+            <div class="text-center">
+              <img src="{{ result.featured_image_url }}" alt="featured image" width="50%">
+            </div>
+            <br>
+            <h3>Current Weather</h3>
+            <p>{{ result['mars_weather'] }}</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Terminal -->
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <div class="mb-0 text-center">
+            <button class="btn btn-link" type="button" disabled>
+              <h2 style="color:blue">Mars Facts</h2>
+            </button>
+          </div>
+        </div>
+
+        <div id="collapseThree" class="collapse show" aria-labelledby="headingThree" data-parent="#environmentAccordion">
+          <div class="card-body">
+            <br>
+            {{ result.mars_facts|safe }}
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header" id="headingFour">
+          <div class="mb-0 text-center">
+            <button class="btn btn-link" type="button" disabled>
+            <h2 style="color:blue">Mars Hemisphere</h2>
+          </button>
+        </div>
+      </div>
+
+      <div id="collapseFour" class="collapse show text-center" aria-labelledby="headingFour" data-parent="#environmentAccordion">
+        <div class="card-body">
+          <img src="{{ result.hemis_list[0]['img_url'] }}" alt="featured image" width="50%">
+          <br>
+          <h3 style="padding:20px">{{ result.hemis_list[0]['title'] }}</h3>
+          <br><br>
+          <img src="{{ result.hemis_list[1]['img_url'] }}" alt="featured image" width="50%">
+          <br>
+          <h3 style="padding:20px">{{ result.hemis_list[1]['title'] }}</h3>
+          <br><br>
+          <img src="{{ result.hemis_list[2]['img_url'] }}" alt="featured image" width="50%">
+          <br>
+          <h3 style="padding:20px">{{ result.hemis_list[2]['title'] }}</h3>
+          <br><br>
+          <img src="{{ result.hemis_list[3]['img_url'] }}" alt="featured image" width="50%">
+          <br>
+          <h3 style="padding:20px">{{ result.hemis_list[3]['title'] }}</h3>
+          <br><br>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Collapsable Posts END-->
+
+</div>
+</div>
+</div>
+<!-- Main Content END -->
+
+</body>
 </html>

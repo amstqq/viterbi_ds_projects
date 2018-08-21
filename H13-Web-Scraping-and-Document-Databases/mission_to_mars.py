@@ -73,7 +73,7 @@ def scrape():
     import pandas as pd
     url4 = 'https://space-facts.com/mars/'
     tables = pd.read_html(url4)
-    mars_facts = tables[0].values
+    mars_facts = tables[0].to_html(header=False, index=False)
 
 
     # # Mars Hemispheres
@@ -109,6 +109,7 @@ def scrape():
     "news_title":news_title,
     "news_p":news_p,
     "featured_image_url":featured_image_url,
+    "mars_weather":mars_weather,
     "mars_facts":mars_facts,
     "hemis_list":hemis_list
     }
